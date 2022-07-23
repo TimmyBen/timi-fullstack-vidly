@@ -7,7 +7,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . . 
-
+ENV DB_URL="mongodb://mongo/vidly"
 EXPOSE 8080 
 
 CMD npm run db:up; npm start
